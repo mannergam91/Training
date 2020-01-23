@@ -1,4 +1,7 @@
-import java.util.Scanner;ublic class Test {
+
+import java.util.Scanner;
+
+public class Test14 {
 
     public static void main(String args[]) {
 
