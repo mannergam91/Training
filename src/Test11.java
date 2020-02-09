@@ -1,13 +1,13 @@
-import java.util.Scanner;
+import java.util.Random;
 public class Test11 {
 
     public static void main(String args[]) {
 
+    Random ran = new Random();
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите текст который будет помещен в строковую переменную s");
-        String s = scanner.nextLine();
-        System.out.println("Текст помещенный в строковую переменную: " + "'" + s + "'");
+
+
+        System.out.println(ran.nextInt(10));
     }
 
 }
