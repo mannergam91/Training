@@ -1,16 +1,54 @@
-import java.util.Scanner;
+import java.io.*;
+
 public class Test19 {
-
     public static void main(String[] args) {
+        String str;
 
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Введите курс доллара к рублю: ");
-        float x = scan.nextFloat();
-        System.out.print("Введите колличество рублей: ");
-        float y = scan.nextFloat();
-        float z;
-        z = y/x;
+        try {
+            File br = new File("C:\\Users\\user\\Desktop\\file.txt");
+            FileReader file = new FileReader(br);
+            BufferedReader buf = new BufferedReader(file);
 
-        System.out.printf("%.2f" + " доллара", z);
+            String line;
+            while ((line = buf.readLine()) != null)
+                System.out.println(line);
+
+            BufferedReader bufr =
+                    new BufferedReader(new InputStreamReader(System.in));
+            try {
+
+                File myFile = new File("C:\\Users\\user\\Desktop\\file.txt");
+                FileReader fileReader = new FileReader(myFile);
+                LineNumberReader lineNumberReader = new LineNumberReader(fileReader);
+
+                int lineNumber = 0;
+
+                while (lineNumberReader.readLine() != null) {
+                    lineNumber++;
+                }
+
+                System.out.println("Введите " + lineNumber + " строки и текст автоматически запишется в файл");
+
+                try {
+                    FileWriter fiw = new FileWriter("C:\\Users\\user\\Desktop\\file.txt");
+
+                    int i = 1;
+                    do {
+                        System.out.print(i + " - ");
+                        str = bufr.readLine();
+                        fiw.write(str);
+                        i++;
+                    } while (i <= lineNumber);
+
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+
     }
 }
