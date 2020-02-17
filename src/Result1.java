@@ -11,6 +11,6 @@ public class Result1 {
             x <<= 1;
         }
 
-        System.out.println("result = " + sb.reverse());
+        System.out.println("двоичный код = " + sb.reverse());
     }
 }
