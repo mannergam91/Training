@@ -18,8 +18,8 @@ public class Test18 {
                     new BufferedReader(new InputStreamReader(System.in));
             try {
 
-                File myFile = new File("C:\\Users\\user\\Desktop\\file.txt");
-                FileReader fileReader = new FileReader(myFile);
+
+                FileReader fileReader = new FileReader(br);
                 LineNumberReader lineNumberReader = new LineNumberReader(fileReader);
 
                 int lineNumber = 0;
