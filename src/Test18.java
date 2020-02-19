@@ -4,6 +4,8 @@ import java.io.*;
 public class Test18 {
     public static void main(String[] args) {
         String str;
+        BufferedReader bufr =
+                new BufferedReader(new InputStreamReader(System.in));
 
         try {
             File br = new File("C:\\Users\\user\\Desktop\\file.txt");
@@ -14,24 +16,18 @@ public class Test18 {
             while ((line = buf.readLine()) != null)
                 System.out.println(line);
 
-            BufferedReader bufr =
-                    new BufferedReader(new InputStreamReader(System.in));
             try {
-
-
-                FileReader fileReader = new FileReader(br);
-                LineNumberReader lineNumberReader = new LineNumberReader(fileReader);
+                LineNumberReader lineNumberReader = new LineNumberReader(file);
 
                 int lineNumber = 0;
 
                 while (lineNumberReader.readLine() != null) {
                     lineNumber++;
                 }
-
                 System.out.println("Введите " + lineNumber + " строки и текст автоматически запишется в файл");
 
-                try {
-                    FileWriter fiw = new FileWriter("C:\\Users\\user\\Desktop\\file.txt");
+                try
+                        (FileWriter fiw = new FileWriter("C:\\Users\\user\\Desktop\\file.txt")){
 
                     int i = 1;
                     do {
